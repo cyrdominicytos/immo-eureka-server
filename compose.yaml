@@ -1,0 +1,15 @@
+services:
+  immo-eureka-server:
+    container_name: immo-eureka-server
+    restart: on-failure
+    build: .
+    ports:
+      - 8761:8761
+    volumes:
+      - .m2:/root/.m2
+    networks:
+      - immo-network
+
+networks:
+  immo-network:
+    external: true
